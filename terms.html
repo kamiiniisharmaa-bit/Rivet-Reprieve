@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms · Rivet & Reprieve</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f4ee;
+      color: #1e1e1e;
+      line-height: 1.5;
+    }
+
+    /* ----- navigation (shared) ----- */
+    .navbar {
+      background: #0b2a3b;
+      padding: 0.75rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid #c9a87c;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .logo a {
+      color: #efe6d7;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo a i {
+      color: #c9a87c;
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2.2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #e6ddcf;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-bottom-color: #c9a87c;
+      color: #ffffff;
+    }
+
+    .nav-links a i {
+      margin-right: 6px;
+      font-size: 0.9rem;
+      color: #c9a87c;
+    }
+
+    /* ----- page container ----- */
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+    }
+
+    /* ----- terms page (enhanced) ----- */
+    .terms-hero {
+      background: #e9e0d3;
+      border-radius: 32px;
+      padding: 2.5rem 3rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+    }
+
+    .terms-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #0b2a3b;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 0.5rem;
+    }
+
+    .terms-hero h1 i {
+      color: #c9a87c;
+    }
+
+    .terms-hero .sub {
+      font-size: 1.15rem;
+      color: #2d3e4b;
+      max-width: 700px;
+    }
+
+    .terms-card {
+      background: #fcfaf7;
+      border-radius: 28px;
+      padding: 2rem 2.5rem;
+      border: 1px solid #e6dbcc;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+    }
+
+    .terms-card h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #0b2a3b;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.8rem;
+      border-bottom: 2px solid #c9a87c;
+      padding-bottom: 0.5rem;
+    }
+
+    .terms-card h2 i {
+      color: #c9a87c;
+    }
+
+    .terms-card p {
+      font-size: 1.05rem;
+      color: #28353f;
+      margin-bottom: 1rem;
+    }
+
+    .terms-card ul {
+      list-style: none;
+      margin: 0.5rem 0 1.2rem 0.5rem;
+    }
+
+    .terms-card ul li {
+      padding: 0.35rem 0 0.35rem 2rem;
+      position: relative;
+      font-size: 1rem;
+      color: #1e2e3a;
+    }
+
+    .terms-card ul li::before {
+      content: "▹";
+      color: #c9a87c;
+      font-weight: 700;
+      font-size: 1.3rem;
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+    }
+
+    .terms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .terms-grid .terms-card {
+      margin-bottom: 0;
+    }
+
+    .badge {
+      background: #0b2a3b;
+      color: #f0e7d6;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      display: inline-block;
+      margin-top: 0.2rem;
+    }
+
+    .highlight-box {
+      background: #0b2a3b;
+      border-radius: 28px;
+      padding: 2rem 2.5rem;
+      color: #efe6d7;
+      margin-top: 2rem;
+      border-left: 6px solid #c9a87c;
+    }
+
+    .highlight-box h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #f0e7d6;
+      margin-bottom: 0.8rem;
+    }
+
+    .highlight-box h3 i {
+      color: #c9a87c;
+    }
+
+    .highlight-box p {
+      color: #d4c9ba;
+      font-size: 1rem;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      text-align: center;
+      color: #6b6b6b;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd6ca;
+      padding-top: 2rem;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .terms-grid {
+        grid-template-columns: 1fr;
+      }
+      .terms-hero {
+        padding: 2rem 1.5rem;
+      }
+      .terms-hero h1 {
+        font-size: 2.2rem;
+      }
+      .terms-card {
+        padding: 1.5rem 1.2rem;
+      }
+      .highlight-box {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 0.75rem 1.2rem;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 0.8rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><i class="fas fa-tshirt"></i> Rivet & Reprieve</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="privacy.html"><i class="fas fa-lock"></i> Privacy</a></li>
+      <li><a href="terms.html" class="active"><i class="fas fa-file-contract"></i> Terms</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== TERMS PAGE CONTENT ===== -->
+  <div class="page">
+
+    <div class="terms-hero">
+      <h1><i class="fas fa-gavel"></i> Terms of service</h1>
+      <p class="sub">By using Rivet & Reprieve, you agree to these terms. We keep them clear and fair — just like our denim.</p>
+    </div>
+
+    <!-- main terms card: overview -->
+    <div class="terms-card">
+      <h2><i class="fas fa-handshake"></i> Agreement</h2>
+      <p>These terms govern your use of our website and purchase of products. By placing an order, you accept these conditions. We may update them occasionally — the latest version is always here.</p>
+      <p><span class="badge"><i class="fas fa-check-circle" style="margin-right: 6px;"></i> effective July 2026</span> <span class="badge" style="background: #c9a87c; color: #0b2a3b; margin-left: 8px;"><i class="fas fa-clock" style="margin-right: 4px;"></i> last updated: 2026-07-06</span></p>
+    </div>
+
+    <!-- grid: orders + returns / intellectual property -->
+    <div class="terms-grid">
+      <div class="terms-card">
+        <h2><i class="fas fa-box"></i> Orders & returns</h2>
+        <ul>
+          <li><strong>Made to order</strong> – each pair is cut and sewn after purchase. Please allow 5–7 business days for production.</li>
+          <li><strong>30-day returns</strong> – unworn, with original tags. We’ll issue a full refund or exchange.</li>
+          <li><strong>Free first fit exchange</strong> – if your size isn’t right, we’ll swap it at no extra cost.</li>
+          <li><strong>Lifetime repair</strong> – we fix any Rivet & Reprieve jeans, no matter how old. Just cover shipping.</li>
+        </ul>
+        <p style="font-size: 0.95rem; color: #4a5a66; margin-top: 0.5rem;"><i class="fas fa-info-circle" style="color: #c9a87c;"></i> Return instructions are included with every order.</p>
+      </div>
+
+      <div class="terms-card">
+        <h2><i class="fas fa-copyright"></i> Intellectual property</h2>
+        <ul>
+          <li><strong>Our designs</strong> – all patterns, cuts, and finishes are original and owned by Rivet & Reprieve.</li>
+          <li><strong>Content</strong> – images, text, and graphics on this site are our property. Do not reproduce without permission.</li>
+          <li><strong>Trademarks</strong> – “Rivet & Reprieve” and the rivet logo are registered marks.</li>
+          <li><strong>Fair use</strong> – you may share product images for personal, non-commercial purposes with credit.</li>
+        </ul>
+        <p style="font-size: 0.95rem; color: #4a5a66; margin-top: 0.5rem;"><i class="fas fa-shield-alt" style="color: #c9a87c;"></i> We protect our craft fiercely — and respectfully.</p>
+      </div>
+    </div>
+
+    <!-- extra: shipping + liability (in a clean row) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 0.5rem;">
+      <div style="flex: 1 1 240px; background: #fcfaf7; border-radius: 24px; padding: 1.5rem 1.8rem; border: 1px solid #e6dbcc;">
+        <i class="fas fa-truck" style="color: #c9a87c; font-size: 2rem;"></i>
+        <h4 style="margin: 0.5rem 0 0.2rem; color: #0b2a3b;">Shipping & delivery</h4>
+        <p style="color: #2d3e4b; font-size: 0.95rem;">We ship worldwide. Delivery times vary by region. You’ll receive a tracking number once your order leaves our workshop.</p>
+      </div>
+      <div style="flex: 1 1 240px; background: #fcfaf7; border-radius: 24px; padding: 1.5rem 1.8rem; border: 1px solid #e6dbcc;">
+        <i class="fas fa-balance-scale" style="color: #c9a87c; font-size: 2rem;"></i>
+        <h4 style="margin: 0.5rem 0 0.2rem; color: #0b2a3b;">Liability</h4>
+        <p style="color: #2d3e4b; font-size: 0.95rem;">Our jeans are built to last, but we’re not liable for normal wear and tear, misuse, or accidents. We stand behind our craftsmanship.</p>
+      </div>
+      <div style="flex: 1 1 240px; background: #fcfaf7; border-radius: 24px; padding: 1.5rem 1.8rem; border: 1px solid #e6dbcc;">
+        <i class="fas fa-credit-card" style="color: #c9a87c; font-size: 2rem;"></i>
+        <h4 style="margin: 0.5rem 0 0.2rem; color: #0b2a3b;">Payment</h4>
+        <p style="color: #2d3e4b; font-size: 0.95rem;">All payments are processed securely via Stripe. We accept major credit cards, Apple Pay, and Google Pay.</p>
+      </div>
+    </div>
+
+    <!-- highlight box: disputes + governing law -->
+    <div class="highlight-box">
+      <h3><i class="fas fa-gavel"></i> Disputes & governing law</h3>
+      <p>These terms are governed by the laws of California, USA. Any disputes arising from your use of this site or purchase of products shall be resolved through binding arbitration in Los Angeles County, in accordance with the rules of the American Arbitration Association.</p>
+      <p style="margin-top: 1rem; color: #d4c9ba;"><i class="fas fa-envelope" style="color: #c9a87c; margin-right: 8px;"></i> For any legal inquiries, please contact us at <strong style="color: #f0e7d6;">legal@rivetreprieve.com</strong></p>
+    </div>
+
+    <!-- final note -->
+    <div style="margin-top: 2rem; background: #e9e0d3; border-radius: 28px; padding: 1.5rem 2rem; border-left: 6px solid #c9a87c;">
+      <p style="font-size: 1rem; color: #0b2a3b; display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-question-circle" style="color: #c9a87c; font-size: 1.5rem;"></i>
+        Have questions about our terms? We’re happy to clarify. Reach us at <strong>help@rivetreprieve.com</strong> or via our <a href="#" style="color: #0b2a3b; text-decoration: underline; font-weight: 500;">contact page</a>.
+      </p>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+      <i class="fas fa-jeans" style="margin-right: 6px;"></i> Rivet & Reprieve · denim for the long run
+    </div>
+  </div>
+
+</body>
+</html>
